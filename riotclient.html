@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Riot client</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"  />
+    <link rel='stylesheet' type='text/css' media='screen' href='./css.css'>
+</head>
+<body>
+    <header>
+        <div class="modau">
+            <div class="content-header">
+                <div class="logo">
+                    <img src="./img/tải_xuống-removebg-preview.png">
+                </div>
+                <div class="login">
+                    <h1>Đăng nhập</h1>
+                    <div class="dn">
+                        <input type="text" name="username" placeholder="Tên đăng nhập">
+                        <p class="error" id="error_username"></p>
+                    </div>
+                    <div class="mk">
+                        <input type="password" name="password" placeholder="Mật khẩu">
+                        <p class="error" id="error_password"></p>
+                    </div>
+                </div>
+                <div class="mxh">
+                   <div class="fb">
+                        <a href="https://www.facebook.com">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                   </div>
+                   <div class="gg">
+                        <a href="https://www.google.com">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                   </div>
+                    <div class="apple">
+                        <a href="https://appleid.apple.com">
+                            <i class="fa-brands fa-apple"></i>
+                        </a>
+                    </div>
+                    <div class="xbox">
+                        <a href="https://www.xbox.com">
+                            <i class="fa-brands fa-xbox"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ghinho">
+                    <input type="checkbox" class="checkbox">Ghi nhớ đăng nhập
+                </div>
+                <div class="arrow" onclick="loginn()">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div> 
+                <div class="">
+                    <h2>Không đăng nhập được?</h1>
+                    <h3>Ứng dụng này được bảo mật bởi hcaptcha và tuân thủ theo <u>chính sách quyền riêng tư</u> và <u>điều khoản dịch vụ</u> của hcaptcha.</h2>
+                </div>
+            </div>
+            <div class="menu">
+                <img src="./img/Ảnh chụp màn hình (59).png">
+                <div class="user">
+                    <a href="" class="icon_user">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    <div class="submenu">
+                        <a href="">Tùy chỉnh</a>
+                        <a href="">Đăng xuất</a>
+                        <a href="">Thoát</a>
+                    </div>
+                </div>
+                <div class="mini">
+                    <a href="">
+                        <i class="fa-solid fa-window-minimize"></i>
+                    </a>
+                </div>
+                <div class="exit">
+                    <a href="">
+                        <i class="fa-solid fa-xmark"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>   
+        function loginn(){
+            var obj_username = document.querySelector('input[name="username"]');
+            var username = obj_username.value;
+            if(username == ''){
+                document.querySelector('#error_username').innerHTML = 'Vui lòng nhập tên đăng nhập.'
+            }else{
+                document.querySelector('#error_username').innerHTML ='';
+            }
+            var obj_password = document.querySelector('input[name="password"]');
+            var password = obj_password.value;
+            if(password == ''){
+                document.querySelector('#error_password').innerHTML = 'Vui lòng nhập mật khẩu.'
+            }else{
+                if(password.length < 8){
+                    document.querySelector('#error_password').innerHTML = 'Vui lòng nhập mật khẩu lớn hơn 8 ký tự.'
+
+                }else{
+                    document.querySelector('#error_password').innerHTML ='';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
